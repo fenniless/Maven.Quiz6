@@ -1,17 +1,31 @@
 package rocks.zipcode.io.objectorientation;
 
 import java.util.Arrays;
+import java.util.concurrent.locks.Condition;
 import java.util.function.Predicate;
 
 public enum TVChannel {
-    ADD_ENUMERATIONS_HERE;
+    MSN(0),
+    CNN(1),
+    FOX(2),
+    AE(3),
+    MTV(4),
+    BET(5),
+    HBO(6),
+    NBC(7),
+    CBS(8);
+    private Integer ordinal;
+
+    TVChannel(Integer channel) {
+        this.ordinal = channel;
+    }
 
     /**
      * @param ordinal; ordinal of the expected enumeration
      * @return enumeration with respective ordinal
      */
     public static TVChannel getByOrdinal(Integer ordinal) {
-        return null;
+        return TVChannel.values()[ordinal];
     }
 
     /**
